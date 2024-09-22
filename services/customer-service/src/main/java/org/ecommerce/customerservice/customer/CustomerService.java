@@ -7,8 +7,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-import static org.ecommerce.customerservice.customer.CustomerMapper.toCustomer;
-
 @Service
 @RequiredArgsConstructor
 public class CustomerService {
@@ -16,7 +14,7 @@ public class CustomerService {
     private final CustomerRepository customerRepository;
 
     public String createCustomer(CustomerRequest request) {
-        Customer customer = customerRepository.save(toCustomer(request));
+        Customer customer = customerRepository.save(CustomerMapper.toCustomer(request));
         return customer.getId();
     }
 
