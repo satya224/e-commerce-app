@@ -2,7 +2,9 @@
 
 ## Overview
 
-As an e-commerce business owner, the current operational model relies heavily on manual processes, which limits efficiency and scalability. This document outlines the pressing business needs that necessitate the development of a dedicated application.
+As an e-commerce business owner, the current operational model relies heavily on manual processes, which limits
+efficiency and scalability. This document outlines the pressing business needs that necessitate the development of a
+dedicated application.
 
 ## Current Challenges
 
@@ -41,6 +43,9 @@ As an e-commerce business owner, the current operational model relies heavily on
 
 ## Conclusion
 
-The development of a dedicated application is essential to address the current challenges faced by the business. By implementing digital solutions, we can enhance operational efficiency, improve customer satisfaction, and lay the groundwork for sustainable growth in the e-commerce sector.
+The development of a dedicated application is essential to address the current challenges faced by the business. By
+implementing digital solutions, we can enhance operational efficiency, improve customer satisfaction, and lay the
+groundwork for sustainable growth in the e-commerce sector.
 
-This document serves as a foundational outline of the business needs driving the project. Further details on project setup and application functionalities will be provided in subsequent documentation.
+This document serves as a foundational outline of the business needs driving the project. Further details on project
+setup and application functionalities will be provided in subsequent documentation.

@@ -46,7 +46,7 @@ public class OrderService {
         // persist the order lines
 
         List<OrderLineRequest> orderLineRequests = new ArrayList<>();
-        for(PurchaseRequest purchaseRequest : request.products()) {
+        for (PurchaseRequest purchaseRequest : request.products()) {
             orderLineRequests.add(
                     new OrderLineRequest(
                             null,

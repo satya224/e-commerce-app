@@ -8,4 +8,5 @@ public record PurchaseRequest(
         Integer productId,
         @Positive(message = "Quantity is mandatory")
         Double quantity
-) {}
+) {
+}

@@ -11,4 +11,5 @@ public record ProductResponse(
         Integer categoryId,
         String categoryName,
         String categoryDescription
-) {}
+) {
+}

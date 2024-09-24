@@ -8,4 +8,5 @@ public record ProductPurchaseResponse(
         String description,
         BigDecimal price,
         Double quantity
-) {}
+) {
+}

@@ -5,4 +5,5 @@ public record OrderLineRequest(
         Integer orderId,
         Integer productId,
         Double quantity
-) {}
+) {
+}

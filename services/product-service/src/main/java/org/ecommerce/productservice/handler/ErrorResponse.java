@@ -2,6 +2,7 @@ package org.ecommerce.productservice.handler;
 
 import java.util.Map;
 
-public record ErrorResponse (
+public record ErrorResponse(
         Map<String, String> errors
-) {}
+) {
+}

@@ -20,4 +20,5 @@ public record OrderRequest(
         String customerId,
         @NotEmpty(message = "Order should have at least one product")
         List<PurchaseRequest> products
-) {}
+) {
+}

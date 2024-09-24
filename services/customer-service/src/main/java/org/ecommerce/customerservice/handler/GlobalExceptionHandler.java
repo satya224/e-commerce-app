@@ -22,7 +22,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ErrorResponse> handleMethodArgumentNotValidException(MethodArgumentNotValidException exception) {
         HashMap<String, String> errors = new HashMap<>();
         exception.getBindingResult().getAllErrors()
-                .forEach(error -> errors.put(((FieldError)error).getField(), error.getDefaultMessage()));
+                .forEach(error -> errors.put(((FieldError) error).getField(), error.getDefaultMessage()));
         return new ResponseEntity<>(new ErrorResponse(errors), HttpStatus.BAD_REQUEST);
     }
 }

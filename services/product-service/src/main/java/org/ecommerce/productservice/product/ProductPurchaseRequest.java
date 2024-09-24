@@ -8,4 +8,5 @@ public record ProductPurchaseRequest(
         @NotNull(message = "Quantity is required")
         Double quantity
 
-) {}
+) {
+}

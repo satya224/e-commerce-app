@@ -17,4 +17,5 @@ public record ProductRequest(
         BigDecimal price,
         @NotNull(message = "Product category is required")
         Integer categoryId
-) {}
+) {
+}

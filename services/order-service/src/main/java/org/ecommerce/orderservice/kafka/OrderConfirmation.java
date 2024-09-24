@@ -13,4 +13,5 @@ public record OrderConfirmation(
         PaymentMethod paymentMethod,
         CustomerResponse customer,
         List<PurchaseResponse> products
-) {}
+) {
+}
