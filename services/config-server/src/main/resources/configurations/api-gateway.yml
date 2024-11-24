@@ -8,17 +8,17 @@ spring:
         - id: customer-service
           uri: lb:http://customer-service
           predicates:
-            - Path=/api/v1/customers/**
+            - Path=/api/v1/**
         - id: order-service
-          uri: lb:http://order-service
+          uri: lb://order-service
           predicates:
             - Path=/api/v1/orders/**
         - id: order-lines-service
-          uri: lb:http://order-service
+          uri: lb://order-lines-service
           predicates:
             - Path=/api/v1/orders-lines/**
         - id: product-service
-          uri: lb:http://product-service
+          uri: lb://product-service
           predicates:
             - Path=/api/v1/products/**
 
