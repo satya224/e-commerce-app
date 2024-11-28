@@ -8,7 +8,7 @@ spring:
         - id: customer-service
           uri: lb:http://customer-service
           predicates:
-            - Path=/api/v1/**
+            - Path=/api/v1/customers/**
         - id: order-service
           uri: lb://order-service
           predicates:
@@ -21,6 +21,15 @@ spring:
           uri: lb://product-service
           predicates:
             - Path=/api/v1/products/**
+      globalcors:
+        cors-configurations:
+          '[/**]': # Applies to all paths
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+            allowCredentials: false
+            maxAge: 3600
+
 
 server:
   port: 8222

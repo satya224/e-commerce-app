@@ -10,3 +10,10 @@ spring:
   cloud:
     config:
       override-system-properties: false
+
+application:
+  config:
+    api-gateway:
+      url: http://localhost:8222
+    local:
+      url: http://localhost:${server.port}
