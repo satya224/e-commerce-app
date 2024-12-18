@@ -1,7 +1,7 @@
 package org.ecommerce.orderservice.payment;
 
-import org.ecommerce.orderservice.customer.CustomerResponse;
-import org.ecommerce.orderservice.order.PaymentMethod;
+import org.ecommerce.commonlib.customer.Customer;
+import org.ecommerce.commonlib.payment.PaymentMethod;
 
 import java.math.BigDecimal;
 
@@ -10,6 +10,6 @@ public record PaymentRequest(
         PaymentMethod paymentMethod,
         Integer orderId,
         String orderReference,
-        CustomerResponse customer
+        Customer customer
 ) {
 }

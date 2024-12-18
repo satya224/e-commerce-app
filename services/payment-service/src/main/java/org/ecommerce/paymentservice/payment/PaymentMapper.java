@@ -1,6 +1,6 @@
 package org.ecommerce.paymentservice.payment;
 
-import org.ecommerce.paymentservice.kafka.PaymentNotificationRequest;
+import org.ecommerce.commonlib.payment.PaymentConfirmation;
 
 public class PaymentMapper {
 
@@ -16,8 +16,8 @@ public class PaymentMapper {
                 .build();
     }
 
-    public static PaymentNotificationRequest toPaymentNotificationRequest(PaymentRequest request) {
-        return new PaymentNotificationRequest(
+    public static PaymentConfirmation toPaymentNotificationRequest(PaymentRequest request) {
+        return new PaymentConfirmation(
                 request.orderReference(),
                 request.amount(),
                 request.paymentMethod(),

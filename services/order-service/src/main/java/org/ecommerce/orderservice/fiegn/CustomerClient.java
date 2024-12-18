@@ -1,6 +1,6 @@
 package org.ecommerce.orderservice.fiegn;
 
-import org.ecommerce.orderservice.customer.CustomerResponse;
+import org.ecommerce.commonlib.customer.Customer;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +11,6 @@ import java.util.Optional;
 public interface CustomerClient {
 
     @GetMapping("/{customerId}")
-    Optional<CustomerResponse> findCustomerById(@PathVariable String customerId);
+    Optional<Customer> findCustomerById(@PathVariable String customerId);
 
 }

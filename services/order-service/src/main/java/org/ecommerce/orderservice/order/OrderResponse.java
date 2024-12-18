@@ -1,5 +1,7 @@
 package org.ecommerce.orderservice.order;
 
+import org.ecommerce.commonlib.payment.PaymentMethod;
+
 import java.math.BigDecimal;
 
 public record OrderResponse(

@@ -3,7 +3,8 @@ package org.ecommerce.orderservice.order;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.ecommerce.orderservice.customer.CustomerResponse;
+import org.ecommerce.commonlib.customer.Customer;
+import org.ecommerce.commonlib.product.Product;
 import org.ecommerce.orderservice.exception.BusinessException;
 import org.ecommerce.orderservice.fiegn.CustomerClient;
 import org.ecommerce.orderservice.fiegn.PaymentClient;
@@ -12,7 +13,6 @@ import org.ecommerce.orderservice.kafka.OrderProducer;
 import org.ecommerce.orderservice.orderline.OrderLineRequest;
 import org.ecommerce.orderservice.orderline.OrderLineService;
 import org.ecommerce.orderservice.product.PurchaseRequest;
-import org.ecommerce.orderservice.product.PurchaseResponse;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -31,12 +31,12 @@ public class OrderService {
 
     public Integer createOrder(@Valid OrderRequest request) {
         // check the customer (use openfeign to call the customer microservice)
-        CustomerResponse customer = customerClient.findCustomerById(request.customerId())
+        Customer customer = customerClient.findCustomerById(request.customerId())
                 .orElseThrow(() -> new BusinessException("Cannot create order:: Customer not found with id: " + request.customerId()));
 
         // purchase the products --> product microservice
 
-        List<PurchaseResponse> purchaseResponses = productClient.purchaseProducts(request.products())
+        List<Product> purchaseResponses = productClient.purchaseProducts(request.products())
                 .orElseThrow(() -> new BusinessException("Cannot create order:: Error while purchasing products"));
 
         // persist the order

@@ -1,10 +1,10 @@
 package org.ecommerce.orderservice.order;
 
 import jakarta.validation.Valid;
-import org.ecommerce.orderservice.customer.CustomerResponse;
-import org.ecommerce.orderservice.kafka.OrderConfirmation;
+import org.ecommerce.commonlib.customer.Customer;
+import org.ecommerce.commonlib.order.OrderConfirmation;
+import org.ecommerce.commonlib.product.Product;
 import org.ecommerce.orderservice.payment.PaymentRequest;
-import org.ecommerce.orderservice.product.PurchaseResponse;
 
 import java.util.List;
 
@@ -22,7 +22,7 @@ public class OrderMapper {
                 .build();
     }
 
-    public static OrderConfirmation toOrderConfirmation(@Valid OrderRequest request, CustomerResponse customer, List<PurchaseResponse> products) {
+    public static OrderConfirmation toOrderConfirmation(@Valid OrderRequest request, Customer customer, List<Product> products) {
         return new OrderConfirmation(
                 request.reference(),
                 request.amount(),
@@ -42,7 +42,7 @@ public class OrderMapper {
         );
     }
 
-    public static PaymentRequest toPaymentRequest(OrderRequest request, CustomerResponse customer, Order order) {
+    public static PaymentRequest toPaymentRequest(OrderRequest request, Customer customer, Order order) {
         return new PaymentRequest(
                 request.amount(),
                 request.paymentMethod(),

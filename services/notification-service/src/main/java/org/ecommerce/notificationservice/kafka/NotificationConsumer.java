@@ -3,9 +3,9 @@ package org.ecommerce.notificationservice.kafka;
 import jakarta.mail.MessagingException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.ecommerce.commonlib.order.OrderConfirmation;
+import org.ecommerce.commonlib.payment.PaymentConfirmation;
 import org.ecommerce.notificationservice.email.EmailService;
-import org.ecommerce.notificationservice.kafka.order.OrderConfirmation;
-import org.ecommerce.notificationservice.kafka.payment.PaymentConfirmation;
 import org.ecommerce.notificationservice.notification.Notification;
 import org.ecommerce.notificationservice.notification.NotificationRepository;
 import org.ecommerce.notificationservice.notification.NotificationType;
@@ -20,7 +20,7 @@ public class NotificationConsumer {
     private final NotificationRepository notificationRepository;
     private final EmailService emailService;
 
-    @KafkaListener(topics = "payment-topic")
+    @KafkaListener(topics = "payment-topic", groupId = "${spring.kafka.consumer.group-id-payment}")
     public void consumePaymentSuccessNotification(PaymentConfirmation paymentConfirmation) throws MessagingException {
         log.info("Consumed payment success notification: {}", paymentConfirmation);
         notificationRepository.save(
@@ -39,7 +39,7 @@ public class NotificationConsumer {
 
     }
 
-    @KafkaListener(topics = "order-topic")
+    @KafkaListener(topics = "order-topic", groupId = "${spring.kafka.consumer.group-id-order}")
     public void consumeOrderSuccessNotification(OrderConfirmation orderConfirmation) throws MessagingException {
         log.info("Consumed order success notification: {}", orderConfirmation);
         notificationRepository.save(

@@ -1,8 +1,8 @@
 package org.ecommerce.orderservice.fiegn;
 
 import jakarta.validation.Valid;
+import org.ecommerce.commonlib.product.Product;
 import org.ecommerce.orderservice.product.PurchaseRequest;
-import org.ecommerce.orderservice.product.PurchaseResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,6 +15,6 @@ import java.util.Optional;
 public interface ProductClient {
 
     @PostMapping("/purchase")
-    Optional<List<PurchaseResponse>> purchaseProducts(@RequestBody @Valid List<PurchaseRequest> request);
+    Optional<List<Product>> purchaseProducts(@RequestBody @Valid List<PurchaseRequest> request);
 
 }
