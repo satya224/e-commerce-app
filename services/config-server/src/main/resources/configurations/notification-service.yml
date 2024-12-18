@@ -19,6 +19,7 @@ spring:
       properties:
         spring.json.trusted.packages: org.ecommerce.commonlib.order, org.ecommerce.commonlib.payment
 
+  #todo: change the email configuration
   mail:
     host: localhost
     port: 1025
