@@ -19,19 +19,16 @@ spring:
       properties:
         spring.json.trusted.packages: org.ecommerce.commonlib.order, org.ecommerce.commonlib.payment
 
-  #todo: change the email configuration
   mail:
-    host: localhost
-    port: 1025
-    username: admin
-    password: admin
+    host: smtp.gmail.com
+    port: 587
+    username: ${EMAIL_USERNAME}
+    password: ${EMAIL_PASSWORD}
     properties:
       mail:
         smtp:
-          trust: "*"
-        auth: true
-        starttls:
-            enabled: true
+          starttls:
+            enable: true
         connectiontimeout: 5000
         timeout: 3000
         writetimeout: 5000

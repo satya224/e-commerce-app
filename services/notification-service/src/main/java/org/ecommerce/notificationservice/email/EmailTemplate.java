@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public enum EmailTemplate {
 
-    PAYMENT_CONFIRMATION("templates/payment_confirmation.html", "Payment successfully processed"),
+    PAYMENT_CONFIRMATION("payment_confirmation.html", "Payment successfully processed"),
     ORDER_CONFIRMATION("order_confirmation.html", "Order Confirmation");
 
     private final String template;
