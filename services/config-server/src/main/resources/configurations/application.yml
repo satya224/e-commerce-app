@@ -17,3 +17,8 @@ application:
       url: http://localhost:8222
     local:
       url: http://localhost:${server.port}
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
